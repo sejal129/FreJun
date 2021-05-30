@@ -6,7 +6,9 @@ from django.contrib import messages
 from django.core.validators import FileExtensionValidator
 from django.template import RequestContext
 from .serializers import loginSerializer
-from rest_framework.views
+from rest_framework.views import APIView
+from rest_framework import status
+from rest_framework.response import Response 
 
 def welcome(request):
     return render(request,'welcome.html')
@@ -66,3 +68,9 @@ def uploadData(request):
 
 def showData(request):
     pass
+
+class loginList(APIView):
+    def get(self,request):
+        login=Login_Details.objects.all()
+        serializer=loginSerializer(login, many=True)
+        return Response(serializer.data)
