@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Sign Up</title>
+{% endblock %}
+
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'signUp' %}">SignUp</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<form class="row g-3" action="enterData" method="POST">
+  <div class="col-md-4">
+    <label for="firstName" class="form-label">First name</label>
+    <input type="text" class="form-control" id="firstName" name="firstName" required>
+  </div>
+  <div class="col-md-4">
+    <label for="lastName" class="form-label">Last name</label>
+    <input type="text" class="form-control" id="lastName" name="lastName"required>
+  </div>
+  <div class="col-md-4">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+  <div class="col-md-6">
+    <label for="Password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="Password" name="Password" required>
+  </div>
+  <div class="col-md-3">
+    <label for="contactNumber" class="form-label">Contact Number</label>
+    <input type="number" class="form-control" id="contactNumber" name="contactNumber" pattern="[6-9]{1}[0-9]{9}" required>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">SignUp</button>
+  </div>
+</form>
+{% endblock %}

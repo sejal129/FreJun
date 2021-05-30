@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Welcome</title>
+<style>
+    a{
+        font-size: 30px;
+    }
+    .alert2{
+        width: 400px;
+        margin-top: 100px;
+        margin-left: 340px;
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+<div class="alert alert-info" role="alert">
+    <h1 style="text-align: center;">Welcome!</h1>
+</div>
+<div class="alert2 alert-primary" role="alert" style="width: 450px; height: 150px; margin:0 auto;">
+    <a href="{% url 'login' %}" style="padding-left: 80px;">Login</a>
+    <a href="{% url 'signUp' %}" style="padding-left: 80px;">SignUp</a>
+</div>
+{% endblock %}
